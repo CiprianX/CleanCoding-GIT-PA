@@ -75,7 +75,8 @@ void BFS(GPH *graph, int start)
     NODE *temp = graph->adjacency_lists[current];
     while (temp) {
       int adj_vertex = temp->data;
-      if (graph->visited[adj_vertex] == 0) {
+      if (graph->visited[adj_vertex] == 0) 
+      {
         graph->visited[adj_vertex] = 1;
         printf("%d ", adj_vertex);
         queue[rear++] = adj_vertex;
@@ -86,7 +87,8 @@ void BFS(GPH *graph, int start)
   free(queue);
 }
 
-int main() {
+int main() 
+{
   int nr_of_vertices, nr_of_edges, starting_vertex;
   printf("Cate noduri are graful? ");
   scanf("%d", &nr_of_vertices);
@@ -94,7 +96,8 @@ int main() {
   scanf("%d", &nr_of_edges);
   GPH *graph = create_graph(nr_of_vertices);
   printf("Adauga %d muchii (de la 0 la %d)\n", nr_of_edges, nr_of_vertices - 1);
-  for (int i = 0; i < nr_of_edges; i++) {
+  for (int i = 0; i < nr_of_edges; i++) 
+  {
     int src, dest;
     scanf("%d %d", &src, &dest);
     add_edge(graph, src, dest);
